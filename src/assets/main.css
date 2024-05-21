@@ -1,0 +1,78 @@
+@import './base.css';
+
+:root {
+  /* main colors */
+  --primary: #1976d2;
+  --secondary: #26A69A;
+  --accent: #9C27B0;
+  --dark: #1d1d1d;
+  --dark-page: #121212;
+  --positive: #21BA45;
+  --negative: #C10015;
+  --info: #31CCEC;
+  --warning: #F2C037;
+
+  /* Other colors */
+  --light-gray-blue: #CCCCCE;
+  --google-color: #db4a39;
+  --facebook-color: #3b5998;
+
+  /* Values */
+  --main-radius: 0.5rem;
+  --btn-input-login: 21.5rem;
+}
+
+body {
+  font-family: Tahoma, sans-serif;
+  font-size: 15px;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.input-login-page {
+  border-radius: var(--main-radius);
+  border: 0.1em solid var(--light-gray-blue);
+  box-sizing: border-box;
+  height: 3.125em;
+  margin: 1em auto;
+  padding: 0em 1em;
+  width: var(--btn-input-login);
+}
+
+.title {
+  font-size: 2rem;
+  margin: 2rem 0em 0.4em 0em;
+  text-align: center;
+}
+
+.btn-login {
+  border-radius: var(--main-radius);
+  border: none;
+  color: white;
+  display: block;
+  font-size: 1rem;
+  height: 2.5rem;
+  margin: 1em auto;
+  width: var(--btn-input-login);
+}
+
+hr {
+  background: var(--light-gray-blue);
+  border: none;
+  height: 1px;
+  width: 78%;
+}
+
+a {
+  color: var(--dark);
+}
