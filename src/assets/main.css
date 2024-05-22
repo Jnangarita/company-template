@@ -44,6 +44,18 @@ body {
   margin: auto;
 }
 
+.main-login-container {
+  align-items: center;
+  background-color: var(--primary);
+  height: 100vh;
+  justify-content: center;
+}
+
+.login-content {
+  background-color: white;
+  border-radius: var(--main-radius);
+}
+
 .input-login-page {
   border-radius: var(--main-radius);
   border: 0.1em solid var(--light-gray-blue);
@@ -72,11 +84,14 @@ body {
   width: var(--btn-input-login);
 }
 
-hr {
-  background: var(--light-gray-blue);
-  border: none;
-  height: 1px;
-  width: 78%;
+.form-content {
+  border-bottom: 1px solid var(--light-gray-blue);
+  margin: auto;
+  width: 21.5rem;
+}
+
+.login-form {
+  width: 26.25rem;
 }
 
 a {
@@ -97,4 +112,14 @@ input:focus {
 .login-photo {
   border-bottom-left-radius: var(--main-radius);
   border-top-left-radius: var(--main-radius);
+}
+
+input[type="submit"] {
+  background-color: var(--primary);
+}
+
+.txt-suggestions {
+  margin: 1em auto;
+  text-align: center;
+  width: var(--btn-input-login);
 }
