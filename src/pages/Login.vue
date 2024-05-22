@@ -5,10 +5,10 @@
       <div class="login-form">
         <h1 class="title">{{ $t("message.welcome") }}</h1>
         <form @submit.prevent="login">
-          <fieldset class="form-content">
+          <fieldset class="form-content margin-auto">
             <input
               :placeholder="$t('message.email')"
-              class="display-flex input-login-page"
+              class="input-login-page input-common"
               id="email-login"
               required
               type="email"
@@ -16,7 +16,7 @@
             />
             <input
               :placeholder="$t('message.password')"
-              class="display-flex input-login-page"
+              class="input-login-page input-common"
               id="password-login"
               pattern="[a-z0-5]{8,}"
               required
@@ -25,21 +25,21 @@
             />
             <label class="display-flex" for="remember-data">
               <input
+                class="margin-left-0"
                 id="remember-data"
                 name="remember-data"
-                required
                 type="checkbox"
                 v-model="loginData.rememberData"
               />{{ $t("message.rememberMe") }}
             </label>
             <input
-              :value="$t('message.restorePassword')"
+              :value="$t('message.login')"
               class="btn-login"
               type="submit"
             />
           </fieldset>
         </form>
-        <div class="form-content">
+        <div class="form-content margin-auto">
           <button class="btn-login btn-google" @click="login">
             <i class="lab la-google la-lg"></i>
             {{ $t("message.signInWithGoogle") }}
@@ -56,7 +56,7 @@
             </a>
           </p>
           <p class="txt-suggestions">
-            <a @click.prevent="goToAnotherScreen(router, 'forgotPassword')">
+            <a @click.prevent="goToAnotherScreen(router, 'createAccount')">
               {{ $t("message.createAccount") }}
             </a>
           </p>
@@ -83,12 +83,3 @@ const login = () => {
   router.push("/");
 };
 </script>
-<style scoped>
-.btn-google {
-  background-color: var(--google-color);
-}
-
-.btn-facebook {
-  background-color: var(--facebook-color);
-}
-</style>

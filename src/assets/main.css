@@ -29,7 +29,7 @@
 body {
   color: var(--dark);
   font-family: Tahoma, sans-serif;
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 .display-flex {
@@ -56,14 +56,29 @@ body {
   border-radius: var(--main-radius);
 }
 
-.input-login-page {
+.input-common {
   border-radius: var(--main-radius);
   border: 0.1em solid var(--light-gray-blue);
   box-sizing: border-box;
   height: 3.125em;
-  margin: 1em auto;
+  margin: 0.5em auto;
   padding: 0em 1em;
+}
+
+.input-login-page {
   width: var(--btn-input-login);
+}
+
+.input-create-account {
+  width: 10.3rem;
+}
+
+.margin-left-0 {
+  margin-left: 0;
+}
+
+.margin-right-0 {
+  margin-right: 0;
 }
 
 .title {
@@ -86,7 +101,6 @@ body {
 
 .form-content {
   border-bottom: 1px solid var(--light-gray-blue);
-  margin: auto;
   width: 21.5rem;
 }
 
@@ -118,8 +132,20 @@ input[type="submit"] {
   background-color: var(--primary);
 }
 
+input[type="checkbox"] {
+  margin-top: 0.1em;
+}
+
 .txt-suggestions {
   margin: 1em auto;
   text-align: center;
   width: var(--btn-input-login);
+}
+
+.btn-google {
+  background-color: var(--google-color);
+}
+
+.btn-facebook {
+  background-color: var(--facebook-color);
 }

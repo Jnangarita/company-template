@@ -10,10 +10,10 @@
         <h1 class="title">{{ $t("message.forgetPassword") }}</h1>
         <p class="txt-suggestions">{{ $t("message.forgetPasswordMsg") }}</p>
         <form @submit.prevent="login">
-          <fieldset class="form-content">
+          <fieldset class="form-content margin-auto">
             <input
               :placeholder="$t('message.email')"
-              class="display-flex input-login-page"
+              class="input-login-page input-common"
               id="email-login"
               required
               type="email"
@@ -28,7 +28,9 @@
         </form>
         <div>
           <p class="txt-suggestions">
-            <a href="">{{ $t("message.createAccount") }}</a>
+            <a @click.prevent="goToAnotherScreen(router, 'createAccount')">
+              {{ $t("message.createAccount") }}
+            </a>
           </p>
           <p class="txt-suggestions">
             <a @click.prevent="goToAnotherScreen(router, 'login')">

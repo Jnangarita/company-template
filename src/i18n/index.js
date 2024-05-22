@@ -19,7 +19,11 @@ const i18n = createI18n({
         welcome: 'Bienvenido',
         forgetPasswordMsg: '¡Ingrese su dirección de correo electrónico y le enviaremos un enlace para restablecer su contraseña!',
         restorePassword: 'Restablecer contraseña',
-        alreadyHaveAccount: '¿Ya tienes una cuenta?'
+        alreadyHaveAccount: '¿Ya tienes una cuenta?',
+        registerAccount: 'Registrar cuenta',
+        firstName: 'Primer nombre',
+        lastName: 'Apellido',
+        confirmPassword: 'Confirmar contraseña',
       }
     }
   }
