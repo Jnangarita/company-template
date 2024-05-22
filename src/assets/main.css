@@ -22,6 +22,10 @@
   --btn-input-login: 21.5rem;
 }
 
+#app {
+  height: 100vh;
+}
+
 body {
   color: var(--dark);
   font-family: Tahoma, sans-serif;
@@ -88,4 +92,9 @@ a:hover {
 input:focus {
   border-color: var(--primary);
   outline: none;
+}
+
+.login-photo {
+  border-bottom-left-radius: var(--main-radius);
+  border-top-left-radius: var(--main-radius);
 }

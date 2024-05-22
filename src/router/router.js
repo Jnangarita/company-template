@@ -1,11 +1,13 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-import IndexPage from "@/pages/IndexPage.vue";
-import Login from "@/pages/LoginPage.vue";
+import Index from "@/pages/Index.vue";
+import Login from "@/pages/Login.vue";
+import ForgotPassword from "@/pages/ForgotPassword.vue";
 
 const routes = [
-  { path: '/', component: IndexPage },
-  { path: '/login', component: Login },
+  { path: '/', component: Index },
+  { path: '/login', name: "login", component: Login },
+  { path: '/forgot-password', name: "forgotPassword", component: ForgotPassword },
 ]
 
 const router = createRouter({

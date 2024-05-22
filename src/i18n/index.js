@@ -17,6 +17,9 @@ const i18n = createI18n({
         createAccount: 'Crear cuenta',
         template: 'Plantilla',
         welcome: 'Bienvenido',
+        forgetPasswordMsg: '¡Ingrese su dirección de correo electrónico y le enviaremos un enlace para restablecer su contraseña!',
+        restorePassword: 'Restablecer contraseña',
+        alreadyHaveAccount: '¿Ya tienes una cuenta?'
       }
     }
   }

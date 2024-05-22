@@ -1,11 +1,7 @@
 <template>
   <div class="display-flex justify-content-center login-container">
     <section class="login-photo">
-      <img
-        alt="img"
-        class="login-photo"
-        src="https://dummyimage.com/440x570/dee2e6/6c757d.png"
-      />
+      <img alt="img" class="login-photo" src="/src/assets/images/login.png" />
     </section>
     <section class="login-data">
       <h1 class="title">{{ $t("message.welcome") }}</h1>
@@ -43,19 +39,25 @@
       </form>
       <div>
         <button class="btn-login btn-google" @click="login">
+          <i class="lab la-google la-lg"></i>
           {{ $t("message.signInWithGoogle") }}
         </button>
         <button class="btn-login btn-facebook" @click="login">
+          <i class="lab la-facebook-f"></i>
           {{ $t("message.signInWithFacebook") }}
         </button>
         <hr />
       </div>
       <div>
         <p>
-          <a @click.prevent="goHome">{{ $t("message.forgetPassword") }}</a>
+          <a @click.prevent="goToAnotherScreen(router, 'forgotPassword')">
+            {{ $t("message.forgetPassword") }}
+          </a>
         </p>
         <p>
-          <a @click.prevent="goHome">{{ $t("message.createAccount") }}</a>
+          <a @click.prevent="goToAnotherScreen(router, 'forgotPassword')">
+            {{ $t("message.createAccount") }}
+          </a>
         </p>
       </div>
     </section>
@@ -63,6 +65,7 @@
 </template>
 
 <script setup>
+import { goToAnotherScreen } from "@/util/functions";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
@@ -77,10 +80,6 @@ const login = () => {
   console.log(loginData.value);
   router.push("/");
 };
-
-const goHome = () => {
-  router.push("/");
-};
 </script>
 <style scoped>
 .login-container {
@@ -92,11 +91,6 @@ section {
   background-color: white;
   height: 35.625rem;
   width: 27.5rem;
-}
-
-.login-photo {
-  border-bottom-left-radius: var(--main-radius);
-  border-top-left-radius: var(--main-radius);
 }
 
 .login-data {
