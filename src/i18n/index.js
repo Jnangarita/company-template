@@ -25,6 +25,7 @@ const i18n = createI18n({
         lastName: 'Apellido',
         confirmPassword: 'Confirmar contraseña',
         dashboard: 'Dashboard',
+        component: 'Componente',
       }
     }
   }

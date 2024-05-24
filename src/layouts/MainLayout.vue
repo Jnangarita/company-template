@@ -1,30 +1,39 @@
 <template>
   <div class="sidenav">
-    <!-- Aquí va tu menú de navegación -->
     <a @click.prevent="goToAnotherScreen(router, 'dashboard')">
       <span class="title-nav display-flex">
         <i class="las la-futbol"></i>{{ $t("message.template") }}
       </span>
     </a>
     <hr />
-    <a @click.prevent="goToAnotherScreen(router, 'dashboard')">
-      <span class="item-nav display-flex">
-        <i class="las la-tachometer-alt"></i>
-        {{ $t("message.dashboard") }}
-      </span>
-    </a>
+    <EssentialLink v-for="link in linksList" :key="link.title" v-bind="link" />
   </div>
   <div class="main">
-    <!-- Este es el punto donde se renderizan las rutas hijas -->
     <router-view></router-view>
   </div>
 </template>
 
 <script setup>
 import { goToAnotherScreen } from "@/util/functions";
+import { useI18n } from "vue-i18n";
 import { useRouter } from "vue-router";
+import EssentialLink from "@/components/EssentialLink.vue";
 
 const router = useRouter();
+const { t } = useI18n();
+
+const linksList = [
+  {
+    icon: "las la-tachometer-alt",
+    link: "dashboard",
+    title: t("message.dashboard"),
+  },
+  {
+    icon: "las la-cog",
+    link: "dashboard",
+    title: t("message.component"),
+  },
+];
 </script>
 
 <style scoped>
@@ -57,10 +66,6 @@ const router = useRouter();
   font-size: 2rem;
   justify-content: center;
   padding: 1.5rem 0rem 1.5rem 0rem;
-}
-
-.item-nav {
-  padding: 1.5rem 0rem 1.5rem 1rem;
 }
 
 .main {
