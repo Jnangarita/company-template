@@ -1,20 +1,23 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-
-import Index from "@/pages/Index.vue";
-import Login from "@/pages/Login.vue";
-import ForgotPassword from "@/pages/ForgotPassword.vue";
-import CreateAccount from '@/pages/CreateAccount.vue';
+import { createRouter, createWebHashHistory } from 'vue-router';
 
 const routes = [
-  { path: '/', component: Index },
-  { path: '/login', name: "login", component: Login },
-  { path: '/forgot-password', name: "forgotPassword", component: ForgotPassword },
-  { path: '/create-account', name: "createAccount", component: CreateAccount },
-]
+  {
+    path: '/',
+    component: () => import('@/layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('@/pages/Index.vue') },
+      { path: 'dashboard', name: 'dashboard', component: () => import('@/pages/Dashboard.vue') },
+    ],
+  },
+
+  { path: '/login', name: 'login', component: () => import('@/pages/Login.vue') },
+  { path: '/forgot-password', name: 'forgotPassword', component: () => import('@/pages/ForgotPassword.vue') },
+  { path: '/create-account', name: 'createAccount', component: () => import('@/pages/CreateAccount.vue') },
+];
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
-})
+});
 
-export default router
+export default router;
