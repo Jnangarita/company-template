@@ -9,10 +9,8 @@ const i18n = createI18n({
       message: {
         email: 'Correo electrónico',
         password: 'Contraseña',
-        rememberMe: 'Recordarme',
+        rememberUser: 'Recordarme',
         login: 'Iniciar sesión',
-        signInWithGoogle: 'Iniciar sesión con Google',
-        signInWithFacebook: 'Iniciar sesión con Facebook',
         forgetPassword: '¿Olvido la contraseña?',
         createAccount: 'Crear cuenta',
         template: 'Plantilla',

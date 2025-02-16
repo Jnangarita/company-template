@@ -30,7 +30,7 @@
                 name="remember-data"
                 type="checkbox"
                 v-model="loginData.rememberData"
-              />{{ $t("message.rememberMe") }}
+              />{{ $t("message.rememberUser") }}
             </label>
             <input
               :value="$t('message.login')"
@@ -39,16 +39,6 @@
             />
           </fieldset>
         </form>
-        <div class="form-content margin-auto">
-          <button class="btn-login btn-google" @click="login">
-            <i class="lab la-google la-lg"></i>
-            {{ $t("message.signInWithGoogle") }}
-          </button>
-          <button class="btn-login btn-facebook" @click="login">
-            <i class="lab la-facebook-f"></i>
-            {{ $t("message.signInWithFacebook") }}
-          </button>
-        </div>
         <div>
           <p class="txt-suggestions">
             <a @click.prevent="goToAnotherScreen(router, 'forgotPassword')">
