@@ -21,7 +21,7 @@
             />
             <input
               :value="$t('message.restorePassword')"
-              class="btn-login"
+              class="btn"
               type="submit"
             />
           </fieldset>

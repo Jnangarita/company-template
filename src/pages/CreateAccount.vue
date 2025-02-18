@@ -54,7 +54,7 @@
             </div>
             <input
               :value="$t('message.registerAccount')"
-              class="btn-login"
+              class="btn"
               type="submit"
             />
           </fieldset>

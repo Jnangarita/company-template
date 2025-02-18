@@ -51,7 +51,7 @@ body {
   display: flex;
   height: 90%;
   justify-content: center;
-  padding: 2.6% 0;
+  padding: 2.7% 0;
 }
 
 .login-content {
@@ -92,7 +92,7 @@ body {
   text-align: center;
 }
 
-.btn-login {
+.btn {
   background-color: var(--primary);
   border-radius: var(--main-radius);
   border: none;
@@ -105,7 +105,7 @@ body {
   width: var(--btn-input-login);
 }
 
-.btn-login:hover {
+.btn:hover {
   background-color: var(--primary-dark);
 }
 

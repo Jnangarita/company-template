@@ -4,7 +4,7 @@
       <img alt="img" class="login-photo" src="/src/assets/images/login.png" />
       <div class="login-form">
         <h1 class="title">{{ $t("message.welcome") }}</h1>
-        <form @submit.prevent="login">
+        <form>
           <fieldset class="form-content margin-auto">
             <input
               :placeholder="$t('message.email')"
@@ -23,20 +23,23 @@
               type="password"
               v-model="loginData.password"
             />
-            <label class="display-flex" for="remember-data">
+            <label class="display-flex" for="remember-user">
               <input
                 class="margin-left-0"
-                id="remember-data"
-                name="remember-data"
+                id="remember-user"
+                name="remember-user"
                 type="checkbox"
                 v-model="loginData.rememberData"
               />{{ $t("message.rememberUser") }}
             </label>
-            <input
-              :value="$t('message.login')"
-              class="btn-login"
-              type="submit"
-            />
+            <ButtonComponent
+              :btnClass="'primary'"
+              :isLoading="isLoading"
+              :txt="$t('message.login')"
+              @click="login"
+            >
+              {{ $t("message.login") }}
+            </ButtonComponent>
           </fieldset>
         </form>
         <div>
@@ -60,8 +63,10 @@
 import { goToAnotherScreen } from "@/util/functions";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import ButtonComponent from "@/components/common/ButtonComponent.vue";
 
 const router = useRouter();
+let isLoading = ref(false);
 const loginData = ref({
   email: "",
   password: "",
@@ -69,7 +74,25 @@ const loginData = ref({
 });
 
 const login = () => {
-  console.log(loginData.value);
-  router.push("/");
+  try {
+    if (!validateLoginField(loginData.value.email, loginData.value.password)) {
+      return;
+    }
+    isLoading.value = true;
+    setTimeout(() => {
+      isLoading.value = false;
+      console.log(loginData.value);
+      router.push("/");
+    }, 5000);
+  } catch (error) {
+    console.error("Error al iniciar sesión");
+  }
+};
+
+const validateLoginField = (email, password) => {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const isEmailValid = emailPattern.test(email);
+  const isPasswordValid = password.length >= 8;
+  return isEmailValid && isPasswordValid;
 };
 </script>
